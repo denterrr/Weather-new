@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CityChoiseActivity"
+    android:background="@drawable/background">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_marginHorizontal="60dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="Введите город"
+        android:backgroundTint="@color/white"
+        android:textSize="28sp"
+        android:foregroundTint="@color/null_color"
+        android:layout_marginTop="80dp"
+        android:id="@+id/et_search"
+        android:imeOptions="actionDone"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textColorHint="@color/gray"/>
+
+
+    <TextView
+        android:id="@+id/tv_fail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/et_search"
+        app:layout_constraintStart_toStartOf="@+id/et_search"
+        app:layout_constraintEnd_toEndOf="@+id/et_search"
+        android:layout_marginTop="5dp"
+        android:text="*город введен неверно"
+        android:textColor="@color/red"
+        android:visibility="gone"/>
+    <TextView
+        android:id="@+id/tv_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:text="Сохранить"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif-light"
+        />
+    <TextView
+        android:id="@+id/tv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="30dp"
+        android:text="Назад"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif-light"
+        />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_city"
+        android:clickable="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_search"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/city_item"
+        app:layout_constrainedHeight="true"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
